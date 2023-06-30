@@ -1,6 +1,6 @@
 package br.com.railvista.RailVista.Entities;
 
-import br.com.railsUtils.TrainDTO;
+import br.com.railsUtils.DTO.TrainDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

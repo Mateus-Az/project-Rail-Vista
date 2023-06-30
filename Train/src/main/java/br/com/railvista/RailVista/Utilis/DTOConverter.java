@@ -1,6 +1,6 @@
 package br.com.railvista.RailVista.Utilis;
 
-import br.com.railsUtils.TrainDTO;
+import br.com.railsUtils.DTO.TrainDTO;
 import br.com.railvista.RailVista.Entities.Train;
 
 public class DTOConverter {

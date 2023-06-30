@@ -1,4 +1,4 @@
-package br.com.railsUtils;
+package br.com.railsUtils.DTO;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

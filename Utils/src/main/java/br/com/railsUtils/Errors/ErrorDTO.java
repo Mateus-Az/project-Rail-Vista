@@ -1,4 +1,4 @@
-package br.com.railsUtils;
+package br.com.railsUtils.Errors;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

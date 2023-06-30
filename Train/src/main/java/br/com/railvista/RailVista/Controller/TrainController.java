@@ -1,7 +1,8 @@
 package br.com.railvista.RailVista.Controller;
 
-import br.com.railsUtils.TrainDTO;
+import br.com.railsUtils.DTO.TrainDTO;
 import br.com.railvista.RailVista.Service.TrainService;
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,29 +12,29 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/train")
 public class TrainController {
     @Autowired
     private TrainService trainService;
 
-    @PostMapping
+    @PostMapping("/train")
     @ResponseStatus(HttpStatus.CREATED)
     public TrainDTO newTrain(@RequestBody @Valid TrainDTO trainDTO){
         return trainService.save(trainDTO);
     }
 
-    @GetMapping
+    @GetMapping("/train")
     public List<TrainDTO> getAll(){
         return trainService.findAll();
     }
 
-    @DeleteMapping("/{id}")
-    public TrainDTO deleteById(@PathVariable UUID id){
-        return trainService.deleteById(id);
+    @GetMapping("/train/{id}")
+    public TrainDTO getById(@PathVariable UUID id){
+        return trainService.findById(id);
     }
 
-    @DeleteMapping
-    public void deleteAll(){
-        trainService.deleteAll();
+    @DeleteMapping("/train/{id}")
+    @Transactional
+    public TrainDTO deleteById(@PathVariable UUID id){
+        return trainService.deleteById(id);
     }
 }

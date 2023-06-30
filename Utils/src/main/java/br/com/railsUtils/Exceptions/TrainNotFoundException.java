@@ -1,4 +1,4 @@
-package br.com.railsUtils;
+package br.com.railsUtils.Exceptions;
 
 public class TrainNotFoundException extends RuntimeException{
 }
